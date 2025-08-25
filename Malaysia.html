@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>马来西亚</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <h1>马来西亚</h1>
+    <h2>简介</h2>
+    <p>内容</p>
+
+    <!-- Tab导航 -->
+    <div class="tab">
+        <button class="tablinks" onclick="openBookmark(event, 'dili')">1. 地理概况</button>
+        <button class="tablinks" onclick="openBookmark(event, 'wenhua')">2. 文化与民族</button>
+        <button class="tablinks" onclick="openBookmark(event, 'lishi')">3. 历史背景</button>
+        <button class="tablinks" onclick="openBookmark(event, 'jingdian')">4. 主要景点</button>
+        <button class="tablinks" onclick="openBookmark(event, 'meishi')">5. 美食文化</button>
+        <button class="tablinks" onclick="openBookmark(event, 'cankao')">6. 参考链接</button>
+    </div>
+
+    <!-- Tab内容 -->
+    <div id="dili" class="tabcontent">
+        <h2>1. 地理概况</h2>
+        <p>马来西亚的地理位置...</p>
+        <img src="https://example.com/image.jpg" alt="地理图片">
+    </div>
+
+    <div id="wenhua" class="tabcontent">
+        <h2>2. 文化与民族</h2>
+        <p>马来西亚的文化介绍...</p>
+    </div>
+
+    <div id="lishi" class="tabcontent">
+        <h2>3. 历史背景</h2>
+        <p>马来西亚的历史背景...</p>
+    </div>
+
+    <div id="jingdian" class="tabcontent">
+        <h2>4. 主要景点</h2>
+        <p>马来西亚的景点介绍...</p>
+    </div>
+
+    <div id="meishi" class="tabcontent">
+        <h2>5. 美食文化</h2>
+        <p>马来西亚的美食介绍...</p>
+    </div>
+
+    <div id="cankao" class="tabcontent">
+        <h2>6. 参考链接</h2>
+        <a href="https://openai.com/index/chatgpt/">点击查看资料来源</a>
+    </div>
+
+    <script type="text/javascript">
+        function openBookmark(evt, BookmarkName) {
+            var i, tabcontent, tablinks;
+
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            document.getElementById(BookmarkName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // 默认显示第一个tab
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector(".tablinks").click();
+        });
+    </script>
+
+</body>
+
+</html>
